@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: API-GATEWAY
+
+  ##GATEWAY CONFIGURATIONS
+
+  cloud:
+    gateway:
+      routes:
+        ## ACCOUNT-SERVICE
+        - id: ACCOUNT-SERVICE
+          uri: lb://ACCOUNT-SERVICE
+          predicates:
+            - Path=/api/v1/accounts/**
+          
+            
+        ## NOTIFICATION-SERVICE
+        - id: NOTIFICATION-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification/** 
+            
+        ## TRANSACTION-SERVICE
+        - id: TRANSACTION-SERVICE
+          uri: lb://TRANSACTION-SERVICE
+          predicates:
+            - Path=/transaction/**
+            
+         ## IDENTITY-SERVICE
+        - id: IDENTITY-SERVICE
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**   
+        
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
