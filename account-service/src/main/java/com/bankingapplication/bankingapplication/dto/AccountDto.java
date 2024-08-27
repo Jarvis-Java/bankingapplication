@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class AccountDto {
-
+         // This is the variables
 	 private Long id;
 	 private String name;
 	 private String email;
