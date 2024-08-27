@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/accounts")
 public class AccountController {
 
+    /*This is service Impl*/
 	@Autowired
     private AccountServiceImpl accountService;
 
