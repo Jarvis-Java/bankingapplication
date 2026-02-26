@@ -1,4 +1,4 @@
-package com.bankingapplication.bankingapplication.services;
+package com.bankingapplication.bankingapplication.pr;
 
 public class userService {  // bad class naming
 
